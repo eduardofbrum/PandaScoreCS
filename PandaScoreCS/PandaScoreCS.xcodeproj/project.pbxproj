@@ -11,6 +11,7 @@
 		0BD47DD12C76287A00E1C51D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47DD02C76287A00E1C51D /* ContentView.swift */; };
 		0BD47DD32C76287B00E1C51D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BD47DD22C76287B00E1C51D /* Assets.xcassets */; };
 		0BD47DD62C76287B00E1C51D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BD47DD52C76287B00E1C51D /* Preview Assets.xcassets */; };
+		0BD47DDE2C762A3500E1C51D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47DDD2C762A3500E1C51D /* Coordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		0BD47DD02C76287A00E1C51D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0BD47DD22C76287B00E1C51D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0BD47DD52C76287B00E1C51D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0BD47DDD2C762A3500E1C51D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 		0BD47DCD2C76287900E1C51D /* PandaScoreCS */ = {
 			isa = PBXGroup;
 			children = (
+				0BD47DDC2C762A2700E1C51D /* Coordinator */,
 				0BD47DCE2C76287A00E1C51D /* PandaScoreCSApp.swift */,
 				0BD47DD02C76287A00E1C51D /* ContentView.swift */,
 				0BD47DD22C76287B00E1C51D /* Assets.xcassets */,
@@ -65,6 +68,14 @@
 				0BD47DD52C76287B00E1C51D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0BD47DDC2C762A2700E1C51D /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				0BD47DDD2C762A3500E1C51D /* Coordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +150,7 @@
 			files = (
 				0BD47DD12C76287A00E1C51D /* ContentView.swift in Sources */,
 				0BD47DCF2C76287A00E1C51D /* PandaScoreCSApp.swift in Sources */,
+				0BD47DDE2C762A3500E1C51D /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
