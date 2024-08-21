@@ -5,23 +5,28 @@ class Coordinator: ObservableObject {
     
     init() { }
     
-    func push() {
-        
+    func push(_ page: Page) {
+        path.append(page)
     }
     
     func pop() {
-        
+        path.removeLast()
     }
     
     func popToRoot() {
-        
+        path.removeLast(path.count)
     }
     
     @ViewBuilder
     @MainActor
-    func build() -> some View {
+    func build(page: Page) -> some View {
         ZStack {
-            
+            switch page {
+            case .listMatches:
+                ListMatchesView()
+            case .detailMatch:
+                DetailMatchView()
+            }
         }
     }
 }
