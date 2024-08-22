@@ -16,6 +16,7 @@
 		0BD47DE22C762D0F00E1C51D /* CoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47DE12C762D0F00E1C51D /* CoordinatorView.swift */; };
 		0BD47DE52C762E3100E1C51D /* ListMatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47DE42C762E3100E1C51D /* ListMatchesView.swift */; };
 		0BD47DE72C762E4A00E1C51D /* DetailMatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47DE62C762E4A00E1C51D /* DetailMatchView.swift */; };
+		0BD47DEA2C7760E000E1C51D /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47DE92C7760E000E1C51D /* APIEndpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		0BD47DE12C762D0F00E1C51D /* CoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorView.swift; sourceTree = "<group>"; };
 		0BD47DE42C762E3100E1C51D /* ListMatchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMatchesView.swift; sourceTree = "<group>"; };
 		0BD47DE62C762E4A00E1C51D /* DetailMatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMatchView.swift; sourceTree = "<group>"; };
+		0BD47DE92C7760E000E1C51D /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 		0BD47DCD2C76287900E1C51D /* PandaScoreCS */ = {
 			isa = PBXGroup;
 			children = (
+				0BD47DE82C7760A800E1C51D /* Network */,
 				0BD47DE32C762E0D00E1C51D /* Views */,
 				0BD47DDC2C762A2700E1C51D /* Coordinator */,
 				0BD47DCE2C76287A00E1C51D /* PandaScoreCSApp.swift */,
@@ -96,6 +99,14 @@
 				0BD47DE62C762E4A00E1C51D /* DetailMatchView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		0BD47DE82C7760A800E1C51D /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				0BD47DE92C7760E000E1C51D /* APIEndpoint.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BD47DD12C76287A00E1C51D /* ContentView.swift in Sources */,
+				0BD47DEA2C7760E000E1C51D /* APIEndpoint.swift in Sources */,
 				0BD47DE22C762D0F00E1C51D /* CoordinatorView.swift in Sources */,
 				0BD47DE52C762E3100E1C51D /* ListMatchesView.swift in Sources */,
 				0BD47DCF2C76287A00E1C51D /* PandaScoreCSApp.swift in Sources */,
