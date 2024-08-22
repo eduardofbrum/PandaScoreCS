@@ -16,6 +16,11 @@
 		0BD47DE22C762D0F00E1C51D /* CoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47DE12C762D0F00E1C51D /* CoordinatorView.swift */; };
 		0BD47DE52C762E3100E1C51D /* ListMatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47DE42C762E3100E1C51D /* ListMatchesView.swift */; };
 		0BD47DE72C762E4A00E1C51D /* DetailMatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47DE62C762E4A00E1C51D /* DetailMatchView.swift */; };
+		0BD47DEA2C7760E000E1C51D /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47DE92C7760E000E1C51D /* APIEndpoint.swift */; };
+		0BD47DEC2C7761DC00E1C51D /* MatchEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47DEB2C7761DC00E1C51D /* MatchEndpoint.swift */; };
+		0BD47DEE2C77650300E1C51D /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47DED2C77650300E1C51D /* APIClient.swift */; };
+		0BD47DF32C7766A500E1C51D /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47DF22C7766A500E1C51D /* Match.swift */; };
+		0BD47DF52C7766F200E1C51D /* MatchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47DF42C7766F200E1C51D /* MatchService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +34,11 @@
 		0BD47DE12C762D0F00E1C51D /* CoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorView.swift; sourceTree = "<group>"; };
 		0BD47DE42C762E3100E1C51D /* ListMatchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMatchesView.swift; sourceTree = "<group>"; };
 		0BD47DE62C762E4A00E1C51D /* DetailMatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMatchView.swift; sourceTree = "<group>"; };
+		0BD47DE92C7760E000E1C51D /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
+		0BD47DEB2C7761DC00E1C51D /* MatchEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchEndpoint.swift; sourceTree = "<group>"; };
+		0BD47DED2C77650300E1C51D /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		0BD47DF22C7766A500E1C51D /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
+		0BD47DF42C7766F200E1C51D /* MatchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +71,8 @@
 		0BD47DCD2C76287900E1C51D /* PandaScoreCS */ = {
 			isa = PBXGroup;
 			children = (
+				0BD47DF12C77664C00E1C51D /* Model */,
+				0BD47DE82C7760A800E1C51D /* Network */,
 				0BD47DE32C762E0D00E1C51D /* Views */,
 				0BD47DDC2C762A2700E1C51D /* Coordinator */,
 				0BD47DCE2C76287A00E1C51D /* PandaScoreCSApp.swift */,
@@ -96,6 +108,25 @@
 				0BD47DE62C762E4A00E1C51D /* DetailMatchView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		0BD47DE82C7760A800E1C51D /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				0BD47DE92C7760E000E1C51D /* APIEndpoint.swift */,
+				0BD47DEB2C7761DC00E1C51D /* MatchEndpoint.swift */,
+				0BD47DED2C77650300E1C51D /* APIClient.swift */,
+				0BD47DF42C7766F200E1C51D /* MatchService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		0BD47DF12C77664C00E1C51D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0BD47DF22C7766A500E1C51D /* Match.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,11 +200,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BD47DD12C76287A00E1C51D /* ContentView.swift in Sources */,
+				0BD47DEA2C7760E000E1C51D /* APIEndpoint.swift in Sources */,
+				0BD47DEC2C7761DC00E1C51D /* MatchEndpoint.swift in Sources */,
+				0BD47DF52C7766F200E1C51D /* MatchService.swift in Sources */,
+				0BD47DEE2C77650300E1C51D /* APIClient.swift in Sources */,
 				0BD47DE22C762D0F00E1C51D /* CoordinatorView.swift in Sources */,
 				0BD47DE52C762E3100E1C51D /* ListMatchesView.swift in Sources */,
 				0BD47DCF2C76287A00E1C51D /* PandaScoreCSApp.swift in Sources */,
 				0BD47DE02C762AEA00E1C51D /* Page.swift in Sources */,
 				0BD47DE72C762E4A00E1C51D /* DetailMatchView.swift in Sources */,
+				0BD47DF32C7766A500E1C51D /* Match.swift in Sources */,
 				0BD47DDE2C762A3500E1C51D /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
