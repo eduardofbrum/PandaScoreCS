@@ -24,7 +24,7 @@ enum MatchEndpoint: APIEndpoint {
     var headers: [String : String]? {
         switch self {
         case .getMatches:
-            return ["Authorization": "Bearer TOKEN"]
+            return ["Authorization": "Bearer rZZiaoMnHUBuUmsXe6fe7dcJ0Kurs5-3W4IxXwC3N0-TWnjbVok"]
         }
     }
     

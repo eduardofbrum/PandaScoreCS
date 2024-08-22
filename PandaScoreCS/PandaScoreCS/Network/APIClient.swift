@@ -14,7 +14,10 @@ class URLSessionAPIClient<EndpointType: APIEndpoint>: APIClient {
         
         endpoint.headers?.forEach { request.addValue($0.value, forHTTPHeaderField: $0.key) }
         
-        return URLSession.shared.dataTaskPublisher(for: request)
+        let decoder = JSONDecoder()
+        
+        return URLSession.shared
+            .dataTaskPublisher(for: request)
             .subscribe(on: DispatchQueue.global(qos: .background))
             .tryMap { data, response -> Data in
                 guard let httpResponse = response as? HTTPURLResponse,
@@ -23,7 +26,7 @@ class URLSessionAPIClient<EndpointType: APIEndpoint>: APIClient {
                 }
                 return data
             }
-            .decode(type: T.self, decoder: JSONDecoder())
+            .decode(type: T.self, decoder: decoder)
             .eraseToAnyPublisher()
     }
 }
