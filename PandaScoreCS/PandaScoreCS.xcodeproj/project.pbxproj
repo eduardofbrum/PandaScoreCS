@@ -30,6 +30,7 @@
 		0BD47E082C78F38400E1C51D /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47E072C78F38400E1C51D /* Fonts.swift */; };
 		0BD47E0A2C78FA8500E1C51D /* TeamsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47E092C78FA8500E1C51D /* TeamsContainer.swift */; };
 		0BD47E0C2C78FCA900E1C51D /* SizeComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47E0B2C78FCA900E1C51D /* SizeComponents.swift */; };
+		0BD47E0E2C7900AA00E1C51D /* LeagueContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47E0D2C7900AA00E1C51D /* LeagueContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		0BD47E072C78F38400E1C51D /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		0BD47E092C78FA8500E1C51D /* TeamsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsContainer.swift; sourceTree = "<group>"; };
 		0BD47E0B2C78FCA900E1C51D /* SizeComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeComponents.swift; sourceTree = "<group>"; };
+		0BD47E0D2C7900AA00E1C51D /* LeagueContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 				0BD47E012C78107600E1C51D /* MatchCard.swift */,
 				0BD47E052C78B73600E1C51D /* ImageLogo.swift */,
 				0BD47E092C78FA8500E1C51D /* TeamsContainer.swift */,
+				0BD47E0D2C7900AA00E1C51D /* LeagueContainer.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				0BD47DEC2C7761DC00E1C51D /* MatchEndpoint.swift in Sources */,
 				0BD47DFC2C78063E00E1C51D /* Colors.swift in Sources */,
 				0BD47E0C2C78FCA900E1C51D /* SizeComponents.swift in Sources */,
+				0BD47E0E2C7900AA00E1C51D /* LeagueContainer.swift in Sources */,
 				0BD47DF52C7766F200E1C51D /* MatchService.swift in Sources */,
 				0BD47DEE2C77650300E1C51D /* APIClient.swift in Sources */,
 				0BD47DFF2C78068100E1C51D /* Tokens.swift in Sources */,

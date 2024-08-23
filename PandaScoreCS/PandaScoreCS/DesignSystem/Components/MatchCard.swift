@@ -28,21 +28,9 @@ struct MatchCard: View {
             )
             
             Divider()
-                .padding(.bottom, 8)
+                .padding(.bottom, Tokens.paddings.m)
             
-            HStack {
-                HStack {
-                    ImageLogo(imageUrl: imageLeague)
-                        .frame(width: 16)
-                        .padding(.trailing, 3.5)
-                    Text(leagueSeries)
-                        .font(.system(size: 8))
-                }
-                
-                Spacer()
-            }
-            .padding(.bottom, 8)
-            .padding(.horizontal, 16)
+            LeagueContainer(imageUrl: imageLeague, name: leagueSeries)
         }
         .frame(maxWidth: .infinity, minHeight: 60)
         .background(Tokens.colors.background2)

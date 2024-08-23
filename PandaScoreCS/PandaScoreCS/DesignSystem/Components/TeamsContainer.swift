@@ -9,15 +9,15 @@ struct TeamsContainer: View {
             VStack {
                 ImageLogo(imageUrl: team1?.imageUrl)
                     .frame(
-                        width: Tokens.sizeComponents.logoContainer.width,
-                        height: Tokens.sizeComponents.logoContainer.height
+                        width: Tokens.sizeComponents.mediumLogo.width,
+                        height: Tokens.sizeComponents.mediumLogo.height
                     )
                     .padding(.bottom, Tokens.paddings.l)
                 Text(team1?.name ?? "TBD")
                     .font(Tokens.fonts.regular10)
             }
             
-            Text("vs")
+            Text("VS")
                 .font(Tokens.fonts.regular12)
                 .foregroundStyle(Tokens.colors.neutral1)
                 .padding(.horizontal, Tokens.paddings.xxl)
@@ -25,8 +25,8 @@ struct TeamsContainer: View {
             VStack {
                 ImageLogo(imageUrl: team2?.imageUrl)
                     .frame(
-                        width: Tokens.sizeComponents.logoContainer.width,
-                        height: Tokens.sizeComponents.logoContainer.height
+                        width: Tokens.sizeComponents.mediumLogo.width,
+                        height: Tokens.sizeComponents.mediumLogo.height
                     )
                     .padding(.bottom, Tokens.paddings.l)
                 Text(team2?.name ?? "TBD")
