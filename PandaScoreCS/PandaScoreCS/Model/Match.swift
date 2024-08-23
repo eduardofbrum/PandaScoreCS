@@ -1,6 +1,6 @@
 struct Match: Decodable, Identifiable {
     let id: Int
-    let status: String
+    let status: MatchStatus
     let scheduledAt: String
     
     let league: League
@@ -13,9 +13,17 @@ struct Match: Decodable, Identifiable {
     }
 }
 
+enum MatchStatus: String, Codable {
+    case notStarted = "not_started"
+    case running
+    case finished
+    case canceled
+    case postponed
+}
+
 struct League: Decodable {
     let name: String
-    let imageUrl: String
+    let imageUrl: String?
     
     enum CodingKeys: String, CodingKey {
         case name

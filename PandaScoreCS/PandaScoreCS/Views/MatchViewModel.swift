@@ -20,9 +20,7 @@ class MatchViewModel: ObservableObject {
         service.getMatches()
             .receive(on: RunLoop.main)
             .sink(receiveCompletion: { data in
-                print(data)
             }, receiveValue: {[weak self] data in
-                print(data)
                 self?.listState = .loaded(data)
             }).store(in: &cancellables)
     }

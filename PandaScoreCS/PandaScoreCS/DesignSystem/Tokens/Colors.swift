@@ -4,6 +4,16 @@ import SwiftUI
 struct Colors {
     /// Background Color
     let background = Color(hex: "#161621")
+    /// Background Color
+    let background2 = Color(hex: "#272639")
+    /// Light gray
+    let neutral1 = Color(hex: "#C4C4C4")
+    /// Light gray opacity 50%
+    let neutral2 = Color(hex: "#C4C4C4").opacity(0.5)
+    /// Light gray opacity 20%
+    let neutral3 = Color(hex: "#C4C4C4").opacity(0.2)
+    /// White
+    let primaryText = Color(hex: "#FFFFFF")
 
 }
 

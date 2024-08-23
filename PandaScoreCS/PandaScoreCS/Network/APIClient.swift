@@ -23,7 +23,6 @@ class URLSessionAPIClient<EndpointType: APIEndpoint>: APIClient {
                       (200...299).contains(httpResponse.statusCode) else {
                     throw APIError.invalidResponse
                 }
-                
                 return data
             }
             .decode(type: T.self, decoder: decoder)
