@@ -22,30 +22,10 @@ struct MatchCard: View {
                     )
             }
             
-            
-            HStack {
-                VStack {
-                    ImageLogo(imageUrl: opponents?.first?.opponent.imageUrl)
-                        .frame(width: 60)
-                        .padding(.bottom, 10)
-                    Text(opponents?.first?.opponent.name ?? "Time 1")
-                        .font(.system(size: 10))
-                }
-                
-                Text("vs")
-                    .font(.system(size: 12))
-                    .foregroundStyle(Tokens.colors.neutral1)
-                    .padding(.horizontal, 20)
-                
-                VStack {
-                    ImageLogo(imageUrl: opponents?.last?.opponent.imageUrl)
-                        .frame(width: 60)
-                        .padding(.bottom, 10)
-                    Text(opponents?.last?.opponent.name ?? "Time 2")
-                        .font(.system(size: 10))
-                }
-            }
-            .padding(.vertical, 18.5)
+            TeamsContainer(
+                team1: opponents?.first?.opponent,
+                team2: opponents?.last?.opponent
+            )
             
             Divider()
                 .padding(.bottom, 8)

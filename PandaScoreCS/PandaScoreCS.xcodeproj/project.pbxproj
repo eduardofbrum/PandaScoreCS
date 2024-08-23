@@ -28,6 +28,7 @@
 		0BD47E042C78A84200E1C51D /* Paddings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47E032C78A84200E1C51D /* Paddings.swift */; };
 		0BD47E062C78B73600E1C51D /* ImageLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47E052C78B73600E1C51D /* ImageLogo.swift */; };
 		0BD47E082C78F38400E1C51D /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47E072C78F38400E1C51D /* Fonts.swift */; };
+		0BD47E0A2C78FA8500E1C51D /* TeamsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47E092C78FA8500E1C51D /* TeamsContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		0BD47E032C78A84200E1C51D /* Paddings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paddings.swift; sourceTree = "<group>"; };
 		0BD47E052C78B73600E1C51D /* ImageLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLogo.swift; sourceTree = "<group>"; };
 		0BD47E072C78F38400E1C51D /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		0BD47E092C78FA8500E1C51D /* TeamsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 			children = (
 				0BD47E012C78107600E1C51D /* MatchCard.swift */,
 				0BD47E052C78B73600E1C51D /* ImageLogo.swift */,
+				0BD47E092C78FA8500E1C51D /* TeamsContainer.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				0BD47E022C78107600E1C51D /* MatchCard.swift in Sources */,
 				0BD47DEA2C7760E000E1C51D /* APIEndpoint.swift in Sources */,
 				0BD47E042C78A84200E1C51D /* Paddings.swift in Sources */,
+				0BD47E0A2C78FA8500E1C51D /* TeamsContainer.swift in Sources */,
 				0BD47DEC2C7761DC00E1C51D /* MatchEndpoint.swift in Sources */,
 				0BD47DFC2C78063E00E1C51D /* Colors.swift in Sources */,
 				0BD47DF52C7766F200E1C51D /* MatchService.swift in Sources */,
