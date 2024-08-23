@@ -14,8 +14,13 @@ struct ListMatchesView: View {
                 ScrollView {
                     VStack {
                         ForEach(matches) { match in
-                            MatchCard(status: match.status.rawValue, opponents: [], imageLeague: match.league.imageUrl, leagueSeries: "\(match.league.name) \(match.serie.name)")
-                                .padding(.bottom)
+                            MatchCard(
+                                status: match.status,
+                                opponents: [],
+                                imageLeague: match.league.imageUrl,
+                                leagueSeries: "\(match.league.name) \(match.serie.name)"
+                            )
+                            .padding(.bottom)
                         }
                     }
                     .padding()

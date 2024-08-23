@@ -1,26 +1,14 @@
 import SwiftUI
 
 struct MatchCard: View {
-    var status: String
+    var status: MatchStatus
     var opponents: [Opponent]?
     var imageLeague: String?
     var leagueSeries: String
     
     var body: some View {
         VStack {
-            HStack {
-                Spacer()
-                Text(status)
-                    .font(Tokens.fonts.bold8)
-                    .foregroundStyle(Tokens.colors.primaryText)
-                    .padding(8)
-                    .background(Tokens.colors.neutral3)
-                    .clipShape(
-                        .rect(
-                            bottomLeadingRadius: 20
-                        )
-                    )
-            }
+            MatchTime(date: "AGORA", status: status)
             
             TeamsContainer(
                 team1: opponents?.first?.opponent,
@@ -39,5 +27,5 @@ struct MatchCard: View {
 }
 
 #Preview {
-    MatchCard(status: "", opponents: [], imageLeague: "", leagueSeries: "")
+    MatchCard(status: .running, opponents: [], imageLeague: "", leagueSeries: "")
 }

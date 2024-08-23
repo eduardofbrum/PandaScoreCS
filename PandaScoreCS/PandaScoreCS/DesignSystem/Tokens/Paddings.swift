@@ -16,4 +16,6 @@ struct Paddings {
     let xl = 16.0
     /// 20
     let xxl = 20.0
+    /// 24
+    let xxxl = 24.0
 }

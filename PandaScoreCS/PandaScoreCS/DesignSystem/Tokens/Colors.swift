@@ -14,6 +14,8 @@ struct Colors {
     let neutral3 = Color(hex: "#C4C4C4").opacity(0.2)
     /// White
     let primaryText = Color(hex: "#FFFFFF")
+    /// Red
+    let alert = Color(hex: "#F42A35")
 
 }
 
