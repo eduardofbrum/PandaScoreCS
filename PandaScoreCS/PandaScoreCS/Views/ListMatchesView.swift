@@ -32,6 +32,9 @@ struct ListMatchesView: View {
         .task {
             viewModel.fetchMatches()
         }
+        .refreshable {
+            viewModel.fetchMatches()
+        }
     }
 }
 
