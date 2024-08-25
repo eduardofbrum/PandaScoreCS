@@ -10,6 +10,7 @@ struct ListMatchesView: View {
             switch viewModel.listState {
             case .loading:
                 ProgressView()
+                    .controlSize(.large)
             case .loaded(let matches):
                 ScrollView {
                     VStack {

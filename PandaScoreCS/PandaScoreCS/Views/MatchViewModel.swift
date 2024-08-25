@@ -12,7 +12,6 @@ class MatchViewModel: ObservableObject {
     
     @Published var listState: ListState = .loading
     
-    
     init(service: MatchServiceProtocol) {
         self.service = service
     }
