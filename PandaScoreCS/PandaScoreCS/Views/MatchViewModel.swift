@@ -39,7 +39,13 @@ class MatchViewModel: ObservableObject {
     
     func sortMatches(_ matches: [Match]) -> [Match] {
         return matches.sorted { match1, match2 in
-            match1.scheduledAt < match2.scheduledAt
+            if match1.status == .running && match2.status != .running {
+                return true
+            } else if match1.status != .running && match2.status == .running {
+                return false
+            }
+            
+            return match1.scheduledAt < match2.scheduledAt
         }
     }
 }
@@ -47,31 +53,24 @@ class MatchViewModel: ObservableObject {
 extension MatchViewModel {
     func formatMatchDate(dateString: String, fromFormat: String) -> String {
         let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = fromFormat
-        
         dateFormatter.dateFormat = fromFormat
+        
         guard let date = dateFormatter.date(from: dateString) else {
             return "TBD"
         }
         
+        dateFormatter.locale = Locale.current
+        
+        if Calendar.current.isDateInToday(date) {
+            dateFormatter.dateFormat = "'Hoje,' HH:mm"
+        } else if Calendar.current.isDate(date, equalTo: Date(), toGranularity: .weekOfYear) {
+            dateFormatter.dateFormat = "E, HH:mm"
+            let formattedDate = dateFormatter.string(from: date)
+            return formattedDate.replacingOccurrences(of: ".", with: "").capitalized
+        } else {
+            dateFormatter.dateFormat = "dd.MM HH:mm"
+        }
+        
         return dateFormatter.string(from: date)
-        
-//        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-//        
-//        guard let date = dateFormatter.date(from: dateString) else {
-//            return "TBD"
-//        }
-//        
-//        dateFormatter.locale = Locale.current
-//        
-//        if Calendar.current.isDateInToday(date) {
-//            dateFormatter.dateFormat = "'Hoje,' HH:mm"
-//        } else if Calendar.current.isDate(date, equalTo: Date(), toGranularity: .weekOfYear) {
-//            dateFormatter.setLocalizedDateFormatFromTemplate("EEE HH:mm")
-//        } else {
-//            dateFormatter.setLocalizedDateFormatFromTemplate("dd MMMM HH:mm")
-//        }
-        
-//        return dateFormatter.string(from: date)
     }
 }
