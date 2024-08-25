@@ -32,6 +32,7 @@
 		0BD47E0C2C78FCA900E1C51D /* SizeComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47E0B2C78FCA900E1C51D /* SizeComponents.swift */; };
 		0BD47E0E2C7900AA00E1C51D /* LeagueContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47E0D2C7900AA00E1C51D /* LeagueContainer.swift */; };
 		0BD47E102C79027000E1C51D /* MatchTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47E0F2C79027000E1C51D /* MatchTime.swift */; };
+		0BD47E142C7BACD500E1C51D /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47E132C7BACD500E1C51D /* SplashScreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		0BD47E0B2C78FCA900E1C51D /* SizeComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeComponents.swift; sourceTree = "<group>"; };
 		0BD47E0D2C7900AA00E1C51D /* LeagueContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueContainer.swift; sourceTree = "<group>"; };
 		0BD47E0F2C79027000E1C51D /* MatchTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTime.swift; sourceTree = "<group>"; };
+		0BD47E132C7BACD500E1C51D /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 				0BD47DE42C762E3100E1C51D /* ListMatchesView.swift */,
 				0BD47DE62C762E4A00E1C51D /* DetailMatchView.swift */,
 				0BD47DF82C77E85700E1C51D /* MatchViewModel.swift */,
+				0BD47E132C7BACD500E1C51D /* SplashScreenView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				0BD47DF32C7766A500E1C51D /* Match.swift in Sources */,
 				0BD47E082C78F38400E1C51D /* Fonts.swift in Sources */,
 				0BD47DDE2C762A3500E1C51D /* Coordinator.swift in Sources */,
+				0BD47E142C7BACD500E1C51D /* SplashScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
