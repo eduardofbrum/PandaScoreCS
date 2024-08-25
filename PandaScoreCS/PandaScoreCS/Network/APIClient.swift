@@ -13,7 +13,6 @@ class URLSessionAPIClient<EndpointType: APIEndpoint>: APIClient {
         request.httpMethod = endpoint.method.rawValue
         
         endpoint.headers?.forEach { request.addValue($0.value, forHTTPHeaderField: $0.key) }
-        
         let decoder = JSONDecoder()
         
         return URLSession.shared

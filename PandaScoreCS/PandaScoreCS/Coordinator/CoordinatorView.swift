@@ -4,7 +4,7 @@ struct CoordinatorView: View {
     @StateObject var coordinator: Coordinator = Coordinator()
     
     var body: some View {
-        VStack {
+        ZStack {
             NavigationStack(path: $coordinator.path) {
                 Group {
                     coordinator.build(page: .listMatches)
@@ -13,6 +13,7 @@ struct CoordinatorView: View {
                     coordinator.build(page: page)
                 }
             }
+            .toolbarBackground(Tokens.colors.background, for: .navigationBar)
         }
         .environmentObject(coordinator)
     }
