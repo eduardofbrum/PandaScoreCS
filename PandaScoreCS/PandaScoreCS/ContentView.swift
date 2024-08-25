@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var isActive = false
+    
     init() {
         UINavigationBar.appearance().barTintColor = UIColor(Tokens.colors.background)
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color.white)]
@@ -8,7 +10,21 @@ struct ContentView: View {
     }
     
     var body: some View {
-        CoordinatorView()
+        ZStack {
+            Tokens.colors.background.ignoresSafeArea()
+            if isActive {
+                CoordinatorView()
+            } else {
+                SplashScreenView()
+            }
+        }
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                withAnimation {
+                    self.isActive = true
+                }
+            }
+        }
     }
 }
 
