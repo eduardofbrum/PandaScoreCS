@@ -12,11 +12,11 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             Tokens.colors.background.ignoresSafeArea()
-//            if isActive {
+            if isActive {
                 CoordinatorView()
-//            } else {
-//                SplashScreenView()
-//            }
+            } else {
+                SplashScreenView()
+            }
         }
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {

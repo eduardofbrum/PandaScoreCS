@@ -54,6 +54,7 @@ struct PlayerCard: View {
             }
         }
         .frame(maxWidth: .infinity, maxHeight: 58)
+        .padding(.bottom, Tokens.paddings.l2)
     }
 }
 

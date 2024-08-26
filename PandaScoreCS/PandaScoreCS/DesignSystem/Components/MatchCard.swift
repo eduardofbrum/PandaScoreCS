@@ -8,7 +8,7 @@ struct MatchCard: View {
     var leagueSeries: String
     
     var body: some View {
-        VStack {
+        VStack(spacing: .zero) {
             MatchTime(date: date, status: status)
             
             TeamsContainer(

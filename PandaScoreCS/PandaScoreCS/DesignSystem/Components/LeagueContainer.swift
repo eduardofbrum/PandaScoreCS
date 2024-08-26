@@ -5,8 +5,8 @@ struct LeagueContainer: View {
     var name: String
     
     var body: some View {
-        HStack {
-            HStack {
+        HStack(spacing: .zero) {
+            HStack(spacing: .zero) {
                 ImageLogo(imageUrl: imageUrl)
                     .frame(
                         width: Tokens.sizeComponents.smallLogo.width,

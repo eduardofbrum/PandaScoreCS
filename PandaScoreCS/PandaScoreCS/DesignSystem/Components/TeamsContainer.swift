@@ -5,8 +5,8 @@ struct TeamsContainer: View {
     var team2: Team?
     
     var body: some View {
-        HStack {
-            VStack {
+        HStack(spacing: .zero) {
+            VStack(spacing: .zero) {
                 ImageLogo(imageUrl: team1?.imageUrl)
                     .frame(
                         width: Tokens.sizeComponents.mediumLogo.width,
@@ -22,7 +22,7 @@ struct TeamsContainer: View {
                 .foregroundStyle(Tokens.colors.neutral1)
                 .padding(.horizontal, Tokens.paddings.xxl)
             
-            VStack {
+            VStack(spacing: .zero) {
                 ImageLogo(imageUrl: team2?.imageUrl)
                     .frame(
                         width: Tokens.sizeComponents.mediumLogo.width,

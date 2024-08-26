@@ -13,7 +13,7 @@ struct ListMatchesView: View {
                     .controlSize(.large)
             case .loaded(let matches):
                 ScrollView {
-                    VStack {
+                    VStack(spacing: .zero) {
                         ForEach(matches) { match in
                             MatchCard(
                                 status: match.status,

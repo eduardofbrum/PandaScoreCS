@@ -12,7 +12,7 @@ struct DetailMatchView: View {
                 ProgressView()
                     .controlSize(.large)
             case .loaded(let match):
-                VStack {
+                VStack(spacing: .zero) {
                     TeamsContainer()
                         .padding(.vertical, Tokens.paddings.xxl)
                     Text("Hoje, 21:00")
