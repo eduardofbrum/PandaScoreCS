@@ -12,7 +12,7 @@ struct LeagueContainer: View {
                         width: Tokens.sizeComponents.smallLogo.width,
                         height: Tokens.sizeComponents.smallLogo.height
                     )
-                    .padding(.trailing, 3.5)
+                    .padding(.trailing, Tokens.paddings.m)
                 Text(name)
                     .font(Tokens.fonts.regular8)
             }

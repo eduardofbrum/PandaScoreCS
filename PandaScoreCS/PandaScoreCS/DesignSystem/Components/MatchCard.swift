@@ -22,7 +22,7 @@ struct MatchCard: View {
             
             LeagueContainer(imageUrl: imageLeague, name: leagueSeries)
         }
-        .frame(maxWidth: .infinity, minHeight: 60)
+        .frame(maxWidth: .infinity)
         .background(Tokens.colors.background2)
         .cornerRadius(16)
     }
