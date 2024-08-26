@@ -24,8 +24,8 @@ class Coordinator: ObservableObject {
             switch page {
             case .listMatches:
                 ListMatchesView()
-            case .detailMatch:
-                DetailMatchView()
+            case .detailMatch(let viewModel):
+                DetailMatchView(viewModel: viewModel)
             }
         }
     }

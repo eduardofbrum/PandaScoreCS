@@ -18,7 +18,7 @@ struct TeamsContainer: View {
             }
             
             Text("VS")
-                .font(Tokens.fonts.regular12)
+                .font(Tokens.fonts.medium)
                 .foregroundStyle(Tokens.colors.neutral1)
                 .padding(.horizontal, Tokens.paddings.xxl)
             
@@ -33,7 +33,6 @@ struct TeamsContainer: View {
                     .font(Tokens.fonts.regular10)
             }
         }
-        .padding(.vertical, 18.5)
     }
 }
 

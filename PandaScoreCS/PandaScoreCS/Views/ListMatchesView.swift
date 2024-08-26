@@ -23,6 +23,9 @@ struct ListMatchesView: View {
                                 leagueSeries: "\(match.league.name) \(match.serie.name)"
                             )
                             .padding(.bottom)
+                            .onTapGesture {
+                                coordinator.push(.detailMatch(viewModel: viewModel))
+                            }
                         }
                     }
                     .padding()

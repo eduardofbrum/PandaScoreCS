@@ -15,6 +15,7 @@ struct MatchCard: View {
                 team1: opponents?.first?.opponent,
                 team2: opponents?.last?.opponent
             )
+            .padding(.vertical, 18.5)
             
             Divider()
                 .padding(.bottom, Tokens.paddings.m)
