@@ -23,13 +23,24 @@ struct DetailMatchView: View {
                 }
             }
         }
-        .navigationBarTitleDisplayMode(.inline)
-        .navigationTitle("Partidas")
         .task {
             viewModel.getMatchById(1)
         }
         .refreshable {
             viewModel.fetchMatches()
+        }
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle("Partidas")
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button {
+                    coordinator.pop()
+                } label: {
+                    Image(systemName: "arrow.backward")
+                        .foregroundStyle(Tokens.colors.primaryText)
+                }
+            }
         }
     }
 }
