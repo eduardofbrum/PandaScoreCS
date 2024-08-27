@@ -1,8 +1,8 @@
 import SwiftUI
 
 struct PlayersContainer: View {
-    var playersTeam1: [PlayerResponse]
-    var playersTeam2: [PlayerResponse]
+    var playersTeam1: [Player]
+    var playersTeam2: [Player]
     
     var body: some View {
         GeometryReader { reader in

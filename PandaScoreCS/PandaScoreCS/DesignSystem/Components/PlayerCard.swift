@@ -6,7 +6,7 @@ enum PositionCardPlayer {
 
 struct PlayerCard: View {
     var position: PositionCardPlayer
-    var player: PlayerResponse
+    var player: Player
     
     var body: some View {
         ZStack {
@@ -23,6 +23,7 @@ struct PlayerCard: View {
                     VStack(alignment: .trailing) {
                         Text(player.nickname)
                             .font(Tokens.fonts.medium2Bold)
+                            .lineLimit(1)
                         Text("\(player.firstName ?? "")")
                             .font(Tokens.fonts.medium)
                             .foregroundStyle(Tokens.colors.neutral4)
@@ -41,6 +42,7 @@ struct PlayerCard: View {
                     VStack(alignment: .leading) {
                         Text(player.nickname)
                             .font(Tokens.fonts.medium2Bold)
+                            .lineLimit(1)
                         Text("\(player.firstName ?? "")")
                             .font(Tokens.fonts.medium)
                             .foregroundStyle(Tokens.colors.neutral4)

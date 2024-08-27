@@ -20,7 +20,6 @@ class MatchViewModel: ObservableObject {
         service.getMatches()
             .receive(on: RunLoop.main)
             .sink(receiveCompletion: { response in
-                print(response)
             }, receiveValue: {[weak self] data in
                 let matches = self?.sortMatches(data)
                 guard let matches = matches else { return }

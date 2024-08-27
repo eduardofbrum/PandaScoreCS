@@ -3,7 +3,7 @@ import Foundation
 
 enum DetailState {
     case loading
-    case loaded([PlayerResponse], [PlayerResponse])
+    case loaded([Player], [Player])
 }
 
 class DetailMatchViewModel: ObservableObject {

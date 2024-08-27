@@ -1,4 +1,4 @@
-public struct PlayerResponse: Decodable, Identifiable {
+public struct Player: Decodable, Identifiable {
     public var id: Int
     public let nickname: String
     public let firstName: String?
