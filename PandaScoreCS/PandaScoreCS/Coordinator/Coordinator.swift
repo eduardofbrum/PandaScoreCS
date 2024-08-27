@@ -22,8 +22,8 @@ class Coordinator: ObservableObject {
     func build(page: Page) -> some View {
         ZStack {
             switch page {
-            case .listMatches:
-                ListMatchesView()
+            case .listMatches(let viewModel):
+                ListMatchesView(viewModel: viewModel)
             case .detailMatch(let match, let viewModel):
                 DetailMatchView(match: match, viewModel: viewModel)
             }

@@ -7,7 +7,7 @@ struct CoordinatorView: View {
         ZStack {
             NavigationStack(path: $coordinator.path) {
                 Group {
-                    coordinator.build(page: .listMatches)
+                    coordinator.build(page: .listMatches(viewModel: .init(service: ListMatchService())))
                 }
                 .navigationDestination(for: Page.self) { page in
                     coordinator.build(page: page)

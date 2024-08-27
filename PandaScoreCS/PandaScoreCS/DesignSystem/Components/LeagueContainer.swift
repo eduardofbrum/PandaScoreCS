@@ -25,5 +25,5 @@ struct LeagueContainer: View {
 }
 
 #Preview {
-    LeagueContainer(imageUrl: "", name: "")
+    LeagueContainer(imageUrl: "", name: "League name series")
 }

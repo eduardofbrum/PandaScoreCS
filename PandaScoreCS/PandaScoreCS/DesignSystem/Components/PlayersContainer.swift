@@ -31,6 +31,5 @@ struct PlayersContainer: View {
 }
 
 #Preview {
-    EmptyView()
-//    PlayersContainer()
+    PlayersContainer(playersTeam1: [], playersTeam2: [])
 }

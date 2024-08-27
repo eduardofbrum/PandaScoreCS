@@ -57,6 +57,7 @@ struct PlayerCard: View {
     }
 }
 
-//#Preview {
-//    PlayerCard(position: .left, player: PlayerResponse()
-//}
+#Preview {
+    let player = Player(id: 1, nickname: "FalleN", firstName: "Gabriel", lastName: "Toledo", imageUrl: "")
+    return PlayerCard(position: .left, player: player)
+}

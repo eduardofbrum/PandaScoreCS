@@ -29,5 +29,5 @@ struct MatchCard: View {
 }
 
 #Preview {
-    MatchCard(status: .running, date: "Hoje, 20:30", opponents: [], imageLeague: "", leagueSeries: "Major League - Rio de Janeiro")
+    MatchCard(status: .running, date: "AGORA", opponents: [], imageLeague: "", leagueSeries: "Major League - Rio de Janeiro")
 }
