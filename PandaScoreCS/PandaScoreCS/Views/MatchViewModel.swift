@@ -6,17 +6,11 @@ enum ListState {
     case loaded([Match])
 }
 
-enum DetailState {
-    case loading
-    case loaded(Match)
-}
-
 class MatchViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     let service: MatchServiceProtocol
     
     @Published var listState: ListState = .loading
-    @Published var detailState: DetailState = .loading
     
     init(service: MatchServiceProtocol) {
         self.service = service
@@ -25,7 +19,8 @@ class MatchViewModel: ObservableObject {
     func fetchMatches() {
         service.getMatches()
             .receive(on: RunLoop.main)
-            .sink(receiveCompletion: { data in
+            .sink(receiveCompletion: { response in
+                print(response)
             }, receiveValue: {[weak self] data in
                 let matches = self?.sortMatches(data)
                 guard let matches = matches else { return }
@@ -37,6 +32,8 @@ class MatchViewModel: ObservableObject {
         switch status {
         case .running:
             return "AGORA"
+        case .finished:
+            return "FINALIZADO"
         default:
             return formatMatchDate(dateString: date, fromFormat: "yyyy-MM-dd'T'HH:mm:ssZ")
         }
@@ -50,19 +47,14 @@ class MatchViewModel: ObservableObject {
                 return false
             }
             
-            return match1.scheduledAt < match2.scheduledAt
+            if match1.status == .finished && match2.status != .finished {
+                return true
+            } else if match1.status != .finished && match2.status == .finished {
+                return false
+            }
+            
+            return match1.scheduledAt ?? "3024-07-17T07:05:16Z" < match2.scheduledAt ?? "3024-07-17T07:05:16Z"
         }
-    }
-    
-    func getMatchById(_ id: Int) {
-        service.getMatches()
-            .receive(on: RunLoop.main)
-            .sink(receiveCompletion: { data in
-            }, receiveValue: {[weak self] data in
-                let matches = self?.sortMatches(data)
-                guard let match = matches?.first else { return }
-                self?.detailState = .loaded(match)
-            }).store(in: &cancellables)
     }
 }
 

@@ -17,14 +17,19 @@ struct ListMatchesView: View {
                         ForEach(matches) { match in
                             MatchCard(
                                 status: match.status,
-                                date: viewModel.getMatchDate(status: match.status, date: match.scheduledAt),
+                                date: viewModel.getMatchDate(status: match.status, date: match.scheduledAt ?? ""),
                                 opponents: match.opponents,
                                 imageLeague: match.league.imageUrl,
                                 leagueSeries: "\(match.league.name) \(match.serie.name)"
                             )
                             .padding(.bottom)
                             .onTapGesture {
-                                coordinator.push(.detailMatch(viewModel: viewModel))
+                                coordinator.push(.detailMatch(
+                                    match: match,
+                                    viewModel: .init(
+                                        service: DetailMatchService()
+                                    )
+                                ))
                             }
                         }
                     }

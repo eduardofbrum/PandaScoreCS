@@ -1,26 +1,36 @@
 import SwiftUI
 
 struct PlayersContainer: View {
+    var playersTeam1: [PlayerResponse]
+    var playersTeam2: [PlayerResponse]
+    
     var body: some View {
-        HStack(spacing: 12) {
-            VStack(spacing: .zero) {
-                PlayerCard(position: .left)
-                PlayerCard(position: .left)
-                PlayerCard(position: .left)
-                PlayerCard(position: .left)
-                PlayerCard(position: .left)
-            }
-            VStack(spacing: .zero) {
-                PlayerCard(position: .right)
-                PlayerCard(position: .right)
-                PlayerCard(position: .right)
-                PlayerCard(position: .right)
-                PlayerCard(position: .right)
+        GeometryReader { reader in
+            HStack(alignment: .top, spacing: 12) {
+                VStack(spacing: .zero) {
+                    ForEach(playersTeam1) { player in
+                        PlayerCard(
+                            position: .left,
+                            player: player
+                        )
+                    }
+                }
+                .frame(maxWidth: reader.size.width / 2)
+                VStack(spacing: .zero) {
+                    ForEach(playersTeam2) { player in
+                        PlayerCard(
+                            position: .right,
+                            player: player
+                        )
+                    }
+                }
+                .frame(maxWidth: reader.size.width / 2)
             }
         }
     }
 }
 
 #Preview {
-    PlayersContainer()
+    EmptyView()
+//    PlayersContainer()
 }

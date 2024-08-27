@@ -9,13 +9,25 @@ struct ImagePlayer: View {
                 image
                     .resizable()
                     .scaledToFit()
+                    .frame(
+                        width: Tokens.sizeComponents.mediumPlayerImage.width,
+                        height: Tokens.sizeComponents.mediumPlayerImage.height
+                    )
             } placeholder: {
-                Rectangle()
+                RoundedRectangle(cornerRadius: 8)
                     .fill(Tokens.colors.neutral1)
+                    .frame(
+                        width: Tokens.sizeComponents.mediumPlayerImage.width,
+                        height: Tokens.sizeComponents.mediumPlayerImage.height
+                    )
             }
         } else {
             RoundedRectangle(cornerRadius: 8)
                 .fill(Tokens.colors.neutral1)
+                .frame(
+                    width: Tokens.sizeComponents.mediumPlayerImage.width,
+                    height: Tokens.sizeComponents.mediumPlayerImage.height
+                )
         }
     }
 }

@@ -1,7 +1,7 @@
 struct Match: Decodable, Identifiable {
     let id: Int
     let status: MatchStatus
-    let scheduledAt: String
+    let scheduledAt: String?
     
     let league: League
     let opponents: [Opponent]?

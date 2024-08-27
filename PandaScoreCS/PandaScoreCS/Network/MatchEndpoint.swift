@@ -2,6 +2,7 @@ import Foundation
 
 enum MatchEndpoint: APIEndpoint {
     case getMatches
+    case getPlayers(teamId: Int)
     
     var baseURL: URL {
         return URL(string: "https://api.pandascore.co")!
@@ -11,27 +12,30 @@ enum MatchEndpoint: APIEndpoint {
         switch self {
         case .getMatches:
             return "/csgo/matches"
+        case .getPlayers:
+            return "/csgo/players"
         }
     }
     
     var method: HTTPMethod {
         switch self {
-        case .getMatches:
+        case .getMatches, .getPlayers:
             return .get
         }
     }
     
     var headers: [String : String]? {
-        switch self {
-        case .getMatches:
-            return ["Authorization": "Bearer rZZiaoMnHUBuUmsXe6fe7dcJ0Kurs5-3W4IxXwC3N0-TWnjbVok"]
-        }
+        return ["Authorization": "Bearer rZZiaoMnHUBuUmsXe6fe7dcJ0Kurs5-3W4IxXwC3N0-TWnjbVok"]
     }
     
-    var parameters: [String : Any]? {
+    var parameters: [String : String]? {
         switch self {
         case .getMatches:
-            return ["page": 1, "limit": 10]
+            return [
+                "filter[opponents_filled]": "true"
+            ]
+        case .getPlayers(let teamId):
+            return ["filter[team_id]": "\(teamId)"]
         }
     }
 }

@@ -36,6 +36,9 @@
 		0BD47E162C7CB0EB00E1C51D /* PlayerCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47E152C7CB0EB00E1C51D /* PlayerCard.swift */; };
 		0BD47E182C7CB1A200E1C51D /* ImagePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47E172C7CB1A200E1C51D /* ImagePlayer.swift */; };
 		0BD47E1A2C7CB8F900E1C51D /* PlayersContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47E192C7CB8F900E1C51D /* PlayersContainer.swift */; };
+		0BD47E1C2C7D374800E1C51D /* DetailMatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47E1B2C7D374800E1C51D /* DetailMatchViewModel.swift */; };
+		0BD47E1E2C7D3D3700E1C51D /* DetailMatchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47E1D2C7D3D3700E1C51D /* DetailMatchService.swift */; };
+		0BD47E202C7D418800E1C51D /* PlayerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47E1F2C7D418800E1C51D /* PlayerResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +72,9 @@
 		0BD47E152C7CB0EB00E1C51D /* PlayerCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCard.swift; sourceTree = "<group>"; };
 		0BD47E172C7CB1A200E1C51D /* ImagePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePlayer.swift; sourceTree = "<group>"; };
 		0BD47E192C7CB8F900E1C51D /* PlayersContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersContainer.swift; sourceTree = "<group>"; };
+		0BD47E1B2C7D374800E1C51D /* DetailMatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMatchViewModel.swift; sourceTree = "<group>"; };
+		0BD47E1D2C7D3D3700E1C51D /* DetailMatchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMatchService.swift; sourceTree = "<group>"; };
+		0BD47E1F2C7D418800E1C51D /* PlayerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +145,7 @@
 				0BD47DE62C762E4A00E1C51D /* DetailMatchView.swift */,
 				0BD47DF82C77E85700E1C51D /* MatchViewModel.swift */,
 				0BD47E132C7BACD500E1C51D /* SplashScreenView.swift */,
+				0BD47E1B2C7D374800E1C51D /* DetailMatchViewModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -150,6 +157,7 @@
 				0BD47DEB2C7761DC00E1C51D /* MatchEndpoint.swift */,
 				0BD47DED2C77650300E1C51D /* APIClient.swift */,
 				0BD47DF42C7766F200E1C51D /* MatchService.swift */,
+				0BD47E1D2C7D3D3700E1C51D /* DetailMatchService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -158,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				0BD47DF22C7766A500E1C51D /* Match.swift */,
+				0BD47E1F2C7D418800E1C51D /* PlayerResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -269,11 +278,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BD47E182C7CB1A200E1C51D /* ImagePlayer.swift in Sources */,
+				0BD47E1C2C7D374800E1C51D /* DetailMatchViewModel.swift in Sources */,
 				0BD47DD12C76287A00E1C51D /* ContentView.swift in Sources */,
 				0BD47E102C79027000E1C51D /* MatchTime.swift in Sources */,
 				0BD47E022C78107600E1C51D /* MatchCard.swift in Sources */,
 				0BD47DEA2C7760E000E1C51D /* APIEndpoint.swift in Sources */,
 				0BD47E042C78A84200E1C51D /* Paddings.swift in Sources */,
+				0BD47E1E2C7D3D3700E1C51D /* DetailMatchService.swift in Sources */,
 				0BD47E0A2C78FA8500E1C51D /* TeamsContainer.swift in Sources */,
 				0BD47DEC2C7761DC00E1C51D /* MatchEndpoint.swift in Sources */,
 				0BD47E1A2C7CB8F900E1C51D /* PlayersContainer.swift in Sources */,
@@ -293,6 +304,7 @@
 				0BD47E162C7CB0EB00E1C51D /* PlayerCard.swift in Sources */,
 				0BD47DF32C7766A500E1C51D /* Match.swift in Sources */,
 				0BD47E082C78F38400E1C51D /* Fonts.swift in Sources */,
+				0BD47E202C7D418800E1C51D /* PlayerResponse.swift in Sources */,
 				0BD47DDE2C762A3500E1C51D /* Coordinator.swift in Sources */,
 				0BD47E142C7BACD500E1C51D /* SplashScreenView.swift in Sources */,
 			);

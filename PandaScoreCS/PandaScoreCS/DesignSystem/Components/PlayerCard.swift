@@ -6,6 +6,7 @@ enum PositionCardPlayer {
 
 struct PlayerCard: View {
     var position: PositionCardPlayer
+    var player: PlayerResponse
     
     var body: some View {
         ZStack {
@@ -20,31 +21,27 @@ struct PlayerCard: View {
                 case .left:
                     Spacer()
                     VStack(alignment: .trailing) {
-                        Text("Nickname")
+                        Text(player.nickname)
                             .font(Tokens.fonts.medium2Bold)
-                        Text("Nome jogador")
+                        Text("\(player.firstName ?? "")")
                             .font(Tokens.fonts.medium)
                             .foregroundStyle(Tokens.colors.neutral4)
                     }
                     .padding(.trailing, Tokens.paddings.xl)
-                    ImagePlayer(imageUrl: "")
+                    ImagePlayer(imageUrl: player.imageUrl)
                         .frame(
                             width: Tokens.sizeComponents.mediumPlayerImage.width,
                             height: Tokens.sizeComponents.mediumPlayerImage.height
                         )
                         .padding(.trailing, Tokens.paddings.l2)
                 case .right:
-                    ImagePlayer(imageUrl: "")
-                        .frame(
-                            width: Tokens.sizeComponents.mediumPlayerImage.width,
-                            height: Tokens.sizeComponents.mediumPlayerImage.height
-                        )
+                    ImagePlayer(imageUrl: player.imageUrl)
                         .padding(.leading, Tokens.paddings.l2)
                     
                     VStack(alignment: .leading) {
-                        Text("Nickname")
+                        Text(player.nickname)
                             .font(Tokens.fonts.medium2Bold)
-                        Text("Nome jogador")
+                        Text("\(player.firstName ?? "")")
                             .font(Tokens.fonts.medium)
                             .foregroundStyle(Tokens.colors.neutral4)
                     }
@@ -58,6 +55,6 @@ struct PlayerCard: View {
     }
 }
 
-#Preview {
-    PlayerCard(position: .left)
-}
+//#Preview {
+//    PlayerCard(position: .left, player: PlayerResponse()
+//}
