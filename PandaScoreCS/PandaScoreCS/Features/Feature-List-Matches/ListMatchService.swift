@@ -1,11 +1,11 @@
 import Combine
 import Foundation
 
-protocol MatchServiceProtocol {
+protocol ListMatchServiceProtocol {
     func getMatches() -> AnyPublisher<[Match], Error>
 }
 
-class MatchService: MatchServiceProtocol {
+class ListMatchService: ListMatchServiceProtocol {
     let apiClient = URLSessionAPIClient<MatchEndpoint>()
     
     func getMatches() -> AnyPublisher<[Match], Error> {

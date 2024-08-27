@@ -6,13 +6,13 @@ enum ListState {
     case loaded([Match])
 }
 
-class MatchViewModel: ObservableObject {
+class ListMatchViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
-    let service: MatchServiceProtocol
+    let service: ListMatchServiceProtocol
     
     @Published var listState: ListState = .loading
     
-    init(service: MatchServiceProtocol) {
+    init(service: ListMatchServiceProtocol) {
         self.service = service
     }
     

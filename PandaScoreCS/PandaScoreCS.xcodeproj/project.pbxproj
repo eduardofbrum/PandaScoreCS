@@ -20,8 +20,8 @@
 		0BD47DEC2C7761DC00E1C51D /* MatchEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47DEB2C7761DC00E1C51D /* MatchEndpoint.swift */; };
 		0BD47DEE2C77650300E1C51D /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47DED2C77650300E1C51D /* APIClient.swift */; };
 		0BD47DF32C7766A500E1C51D /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47DF22C7766A500E1C51D /* Match.swift */; };
-		0BD47DF52C7766F200E1C51D /* MatchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47DF42C7766F200E1C51D /* MatchService.swift */; };
-		0BD47DF92C77E85700E1C51D /* MatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47DF82C77E85700E1C51D /* MatchViewModel.swift */; };
+		0BD47DF52C7766F200E1C51D /* ListMatchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47DF42C7766F200E1C51D /* ListMatchService.swift */; };
+		0BD47DF92C77E85700E1C51D /* ListMatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47DF82C77E85700E1C51D /* ListMatchViewModel.swift */; };
 		0BD47DFC2C78063E00E1C51D /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47DFB2C78063E00E1C51D /* Colors.swift */; };
 		0BD47DFF2C78068100E1C51D /* Tokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47DFE2C78068100E1C51D /* Tokens.swift */; };
 		0BD47E022C78107600E1C51D /* MatchCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47E012C78107600E1C51D /* MatchCard.swift */; };
@@ -57,8 +57,8 @@
 		0BD47DEB2C7761DC00E1C51D /* MatchEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchEndpoint.swift; sourceTree = "<group>"; };
 		0BD47DED2C77650300E1C51D /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		0BD47DF22C7766A500E1C51D /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
-		0BD47DF42C7766F200E1C51D /* MatchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchService.swift; sourceTree = "<group>"; };
-		0BD47DF82C77E85700E1C51D /* MatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewModel.swift; sourceTree = "<group>"; };
+		0BD47DF42C7766F200E1C51D /* ListMatchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMatchService.swift; sourceTree = "<group>"; };
+		0BD47DF82C77E85700E1C51D /* ListMatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMatchViewModel.swift; sourceTree = "<group>"; };
 		0BD47DFB2C78063E00E1C51D /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		0BD47DFE2C78068100E1C51D /* Tokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tokens.swift; sourceTree = "<group>"; };
 		0BD47E012C78107600E1C51D /* MatchCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCard.swift; sourceTree = "<group>"; };
@@ -209,8 +209,8 @@
 		0BD47E222C7DF92B00E1C51D /* Feature-List-Matches */ = {
 			isa = PBXGroup;
 			children = (
-				0BD47DF42C7766F200E1C51D /* MatchService.swift */,
-				0BD47DF82C77E85700E1C51D /* MatchViewModel.swift */,
+				0BD47DF42C7766F200E1C51D /* ListMatchService.swift */,
+				0BD47DF82C77E85700E1C51D /* ListMatchViewModel.swift */,
 				0BD47DE42C762E3100E1C51D /* ListMatchesView.swift */,
 			);
 			path = "Feature-List-Matches";
@@ -326,11 +326,11 @@
 				0BD47DFC2C78063E00E1C51D /* Colors.swift in Sources */,
 				0BD47E0C2C78FCA900E1C51D /* SizeComponents.swift in Sources */,
 				0BD47E0E2C7900AA00E1C51D /* LeagueContainer.swift in Sources */,
-				0BD47DF52C7766F200E1C51D /* MatchService.swift in Sources */,
+				0BD47DF52C7766F200E1C51D /* ListMatchService.swift in Sources */,
 				0BD47DEE2C77650300E1C51D /* APIClient.swift in Sources */,
 				0BD47DFF2C78068100E1C51D /* Tokens.swift in Sources */,
 				0BD47DE22C762D0F00E1C51D /* CoordinatorView.swift in Sources */,
-				0BD47DF92C77E85700E1C51D /* MatchViewModel.swift in Sources */,
+				0BD47DF92C77E85700E1C51D /* ListMatchViewModel.swift in Sources */,
 				0BD47DE52C762E3100E1C51D /* ListMatchesView.swift in Sources */,
 				0BD47DCF2C76287A00E1C51D /* PandaScoreCSApp.swift in Sources */,
 				0BD47E272C7DFAFC00E1C51D /* DateFormatter.swift in Sources */,
