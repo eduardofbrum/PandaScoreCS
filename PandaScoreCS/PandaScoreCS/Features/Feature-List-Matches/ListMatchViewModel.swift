@@ -1,12 +1,13 @@
 import Combine
 import Foundation
 
-enum ListState {
+enum ListState: Equatable {    
     case loading
     case loaded([Match])
+    case error
 }
 
-class ListMatchViewModel: ObservableObject {
+public class ListMatchViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     let service: ListMatchServiceProtocol
     
@@ -19,7 +20,13 @@ class ListMatchViewModel: ObservableObject {
     func fetchMatches() {
         service.getMatches()
             .receive(on: RunLoop.main)
-            .sink(receiveCompletion: { response in
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .failure:
+                    self.listState = .error
+                case .finished:
+                    break
+                }
             }, receiveValue: {[weak self] data in
                 let matches = self?.sortMatches(data)
                 guard let matches = matches else { return }

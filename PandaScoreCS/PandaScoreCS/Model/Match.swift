@@ -1,19 +1,36 @@
-struct Match: Decodable, Identifiable {
-    let id: Int
-    let status: MatchStatus
-    let scheduledAt: String?
+public struct Match: Decodable, Identifiable, Equatable {
     
-    let league: League
-    let opponents: [Opponent]?
-    let serie: Serie
+    public let id: Int
+    public let status: MatchStatus
+    public let scheduledAt: String?
+    
+    public let league: League
+    public let opponents: [Opponent]?
+    public let serie: Serie
     
     enum CodingKeys: String, CodingKey {
         case id, status, league, opponents, serie
         case scheduledAt = "scheduled_at"
     }
+    
+    public init(
+        id: Int,
+        status: MatchStatus,
+        scheduledAt: String?,
+        league: League,
+        opponents: [Opponent]?,
+        serie: Serie
+    ) {
+        self.id = id
+        self.status = status
+        self.scheduledAt = scheduledAt
+        self.league = league
+        self.opponents = opponents
+        self.serie = serie
+    }
 }
 
-enum MatchStatus: String, Codable {
+public enum MatchStatus: String, Codable, Equatable {
     case notStarted = "not_started"
     case running
     case finished
@@ -21,22 +38,30 @@ enum MatchStatus: String, Codable {
     case postponed
 }
 
-struct League: Decodable {
-    let name: String
-    let imageUrl: String?
+public struct League: Decodable, Equatable {
+    public let name: String
+    public let imageUrl: String?
     
     enum CodingKeys: String, CodingKey {
         case name
         case imageUrl = "image_url"
     }
+    
+    public init(name: String, imageUrl: String?) {
+        self.name = name
+        self.imageUrl = imageUrl
+    }
 }
 
-struct Opponent: Decodable {
+public struct Opponent: Decodable, Equatable {
     let opponent: Team
-    let type: String
+    
+    public init(opponent: Team) {
+        self.opponent = opponent
+    }
 }
 
-struct Team: Decodable {
+public struct Team: Decodable, Equatable {
     let id: Int
     let name: String
     let imageUrl: String?
@@ -47,10 +72,44 @@ struct Team: Decodable {
     }
 }
 
-struct Serie: Decodable {
-    let name: String
+public struct Serie: Decodable, Equatable {
+    public let name: String
 
     enum CodingKeys: String, CodingKey {
         case name
+    }
+    
+    public init(name: String) {
+        self.name = name
+    }
+}
+
+public extension Match {
+    static func fixture(
+        id: Int = 1,
+        status: MatchStatus = .notStarted,
+        scheduleAt: String? = "",
+        league: League = .init(name: "League name", imageUrl: ""),
+        opponents: [Opponent]? = [],
+        serie: Serie = .init(name: "Serie name")
+    ) -> Self {
+        .init(
+            id: id,
+            status: status,
+            scheduledAt: scheduleAt,
+            league: league,
+            opponents: opponents,
+            serie: serie
+        )
+    }
+}
+
+public extension Opponent {
+    static func fixture(
+        id: Int = 1,
+        name: String = "Name",
+        imageUrl: String? = ""
+    ) -> Self {
+        .init(opponent: .init(id: id, name: name, imageUrl: imageUrl))
     }
 }
