@@ -1,12 +1,12 @@
 import Combine
 import Foundation
 
-enum ListState {
+enum ListState: Equatable {    
     case loading
     case loaded([Match])
 }
 
-class ListMatchViewModel: ObservableObject {
+public class ListMatchViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     let service: ListMatchServiceProtocol
     

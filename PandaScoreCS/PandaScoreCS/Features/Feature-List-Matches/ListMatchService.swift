@@ -12,3 +12,20 @@ class ListMatchService: ListMatchServiceProtocol {
         return apiClient.request(.getMatches)
     }
 }
+
+final class ListMatchServiceStub: ListMatchServiceProtocol {
+    var getMatchesResultToBeReturned: Result<[Match], Error> = .success([])
+    
+    func getMatches() -> AnyPublisher<[Match], Error> {
+        switch getMatchesResultToBeReturned {
+        case .success(let matches):
+            return Just(matches)
+                .setFailureType(to: Error.self)
+                .eraseToAnyPublisher()
+            
+        case .failure(let error):
+            return Fail(error: error)
+                .eraseToAnyPublisher()
+        }
+    }
+}

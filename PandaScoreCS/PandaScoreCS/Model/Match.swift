@@ -1,4 +1,5 @@
-public struct Match: Decodable, Identifiable {
+public struct Match: Decodable, Identifiable, Equatable {
+    
     public let id: Int
     public let status: MatchStatus
     public let scheduledAt: String?
@@ -29,7 +30,7 @@ public struct Match: Decodable, Identifiable {
     }
 }
 
-public enum MatchStatus: String, Codable {
+public enum MatchStatus: String, Codable, Equatable {
     case notStarted = "not_started"
     case running
     case finished
@@ -37,7 +38,7 @@ public enum MatchStatus: String, Codable {
     case postponed
 }
 
-public struct League: Decodable {
+public struct League: Decodable, Equatable {
     public let name: String
     public let imageUrl: String?
     
@@ -52,12 +53,12 @@ public struct League: Decodable {
     }
 }
 
-public struct Opponent: Decodable {
+public struct Opponent: Decodable, Equatable {
     let opponent: Team
     let type: String
 }
 
-public struct Team: Decodable {
+public struct Team: Decodable, Equatable {
     let id: Int
     let name: String
     let imageUrl: String?
@@ -68,7 +69,7 @@ public struct Team: Decodable {
     }
 }
 
-public struct Serie: Decodable {
+public struct Serie: Decodable, Equatable {
     public let name: String
 
     enum CodingKeys: String, CodingKey {
