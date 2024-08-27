@@ -36,6 +36,8 @@ struct DetailMatchView: View {
                     .padding(.vertical, Tokens.paddings.xxl)
                     Spacer()
                 }
+            case .error:
+                EmptyView()
             }
         }
         .task {

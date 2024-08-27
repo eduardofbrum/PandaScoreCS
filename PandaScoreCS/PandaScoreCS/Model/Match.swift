@@ -55,7 +55,10 @@ public struct League: Decodable, Equatable {
 
 public struct Opponent: Decodable, Equatable {
     let opponent: Team
-    let type: String
+    
+    public init(opponent: Team) {
+        self.opponent = opponent
+    }
 }
 
 public struct Team: Decodable, Equatable {
@@ -98,5 +101,15 @@ public extension Match {
             opponents: opponents,
             serie: serie
         )
+    }
+}
+
+public extension Opponent {
+    static func fixture(
+        id: Int = 1,
+        name: String = "Name",
+        imageUrl: String? = ""
+    ) -> Self {
+        .init(opponent: .init(id: id, name: name, imageUrl: imageUrl))
     }
 }
