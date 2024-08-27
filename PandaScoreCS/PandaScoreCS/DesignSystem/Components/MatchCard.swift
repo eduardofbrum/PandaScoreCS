@@ -8,25 +8,26 @@ struct MatchCard: View {
     var leagueSeries: String
     
     var body: some View {
-        VStack {
+        VStack(spacing: .zero) {
             MatchTime(date: date, status: status)
             
             TeamsContainer(
                 team1: opponents?.first?.opponent,
                 team2: opponents?.last?.opponent
             )
+            .padding(.vertical, 18.5)
             
             Divider()
                 .padding(.bottom, Tokens.paddings.m)
             
             LeagueContainer(imageUrl: imageLeague, name: leagueSeries)
         }
-        .frame(maxWidth: .infinity, minHeight: 60)
+        .frame(maxWidth: .infinity)
         .background(Tokens.colors.background2)
         .cornerRadius(16)
     }
 }
 
 #Preview {
-    MatchCard(status: .running, date: "", opponents: [], imageLeague: "", leagueSeries: "")
+    MatchCard(status: .running, date: "Hoje, 20:30", opponents: [], imageLeague: "", leagueSeries: "Major League - Rio de Janeiro")
 }

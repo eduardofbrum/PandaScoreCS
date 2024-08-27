@@ -2,7 +2,7 @@ import SwiftUI
 
 struct ListMatchesView: View {
     @EnvironmentObject var coordinator: Coordinator
-    @StateObject var viewModel: MatchViewModel = MatchViewModel(service: MatchService())
+    @StateObject var viewModel: ListMatchViewModel = ListMatchViewModel(service: ListMatchService())
     
     var body: some View {
         ZStack {
@@ -13,16 +13,25 @@ struct ListMatchesView: View {
                     .controlSize(.large)
             case .loaded(let matches):
                 ScrollView {
-                    VStack {
+                    VStack(spacing: .zero) {
                         ForEach(matches) { match in
                             MatchCard(
                                 status: match.status,
-                                date: viewModel.getMatchDate(status: match.status, date: match.scheduledAt),
+                                date: viewModel.getMatchDate(status: match.status, date: match.scheduledAt ?? ""),
                                 opponents: match.opponents,
                                 imageLeague: match.league.imageUrl,
                                 leagueSeries: "\(match.league.name) \(match.serie.name)"
                             )
                             .padding(.bottom)
+                            .onTapGesture {
+                                coordinator.push(.detailMatch(
+                                    match: match,
+                                    viewModel: .init(
+                                        service: DetailMatchService(),
+                                        matchDate: match.scheduledAt ?? ""
+                                    )
+                                ))
+                            }
                         }
                     }
                     .padding()

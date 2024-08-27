@@ -6,20 +6,20 @@ enum ListState {
     case loaded([Match])
 }
 
-class MatchViewModel: ObservableObject {
+class ListMatchViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
-    let service: MatchServiceProtocol
+    let service: ListMatchServiceProtocol
     
     @Published var listState: ListState = .loading
     
-    init(service: MatchServiceProtocol) {
+    init(service: ListMatchServiceProtocol) {
         self.service = service
     }
     
     func fetchMatches() {
         service.getMatches()
             .receive(on: RunLoop.main)
-            .sink(receiveCompletion: { data in
+            .sink(receiveCompletion: { response in
             }, receiveValue: {[weak self] data in
                 let matches = self?.sortMatches(data)
                 guard let matches = matches else { return }
@@ -31,6 +31,8 @@ class MatchViewModel: ObservableObject {
         switch status {
         case .running:
             return "AGORA"
+        case .finished:
+            return "FINALIZADO"
         default:
             return formatMatchDate(dateString: date, fromFormat: "yyyy-MM-dd'T'HH:mm:ssZ")
         }
@@ -44,32 +46,13 @@ class MatchViewModel: ObservableObject {
                 return false
             }
             
-            return match1.scheduledAt < match2.scheduledAt
+            if match1.status == .finished && match2.status != .finished {
+                return true
+            } else if match1.status != .finished && match2.status == .finished {
+                return false
+            }
+            
+            return match1.scheduledAt ?? "3024-07-17T07:05:16Z" < match2.scheduledAt ?? "3024-07-17T07:05:16Z"
         }
-    }
-}
-
-extension MatchViewModel {
-    func formatMatchDate(dateString: String, fromFormat: String) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = fromFormat
-        
-        guard let date = dateFormatter.date(from: dateString) else {
-            return "TBD"
-        }
-        
-        dateFormatter.locale = Locale.current
-        
-        if Calendar.current.isDateInToday(date) {
-            dateFormatter.dateFormat = "'Hoje,' HH:mm"
-        } else if Calendar.current.isDate(date, equalTo: Date(), toGranularity: .weekOfYear) {
-            dateFormatter.dateFormat = "E, HH:mm"
-            let formattedDate = dateFormatter.string(from: date)
-            return formattedDate.replacingOccurrences(of: ".", with: "").capitalized
-        } else {
-            dateFormatter.dateFormat = "dd.MM HH:mm"
-        }
-        
-        return dateFormatter.string(from: date)
     }
 }

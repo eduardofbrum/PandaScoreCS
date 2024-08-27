@@ -5,7 +5,7 @@ struct MatchTime: View {
     var status: MatchStatus = .notStarted
     
     var body: some View {
-        HStack {
+        HStack(spacing: .zero) {
             Spacer()
             Text(date)
                 .font(Tokens.fonts.bold8)

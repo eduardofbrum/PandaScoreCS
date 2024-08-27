@@ -1,6 +1,7 @@
+import SwiftUI
 enum Page: Hashable {
     case listMatches
-    case detailMatch
+    case detailMatch(match: Match, viewModel: DetailMatchViewModel)
     
     var id: String {
         switch self {

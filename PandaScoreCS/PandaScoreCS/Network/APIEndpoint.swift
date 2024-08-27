@@ -5,7 +5,7 @@ protocol APIEndpoint {
     var path: String { get }
     var method: HTTPMethod { get }
     var headers: [String: String]? { get }
-    var parameters: [String: Any]? { get }
+    var parameters: [String: String]? { get }
 }
 
 enum HTTPMethod: String {
@@ -17,6 +17,7 @@ enum HTTPMethod: String {
 }
 
 enum APIError: Error {
+    case invalidUrl
     case invalidResponse
     case invalidData
 }
