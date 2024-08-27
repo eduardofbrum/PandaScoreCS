@@ -12,7 +12,7 @@ final class DetailMatchViewModelTests: XCTestCase {
         ]
     )
     
-    func test_fetch_whenServiceIsFailing_shouldSetStateToLoaded() {
+    func test_fetch_whenServiceIsFailure_shouldSetStateToError() {
         //Given
         let detailMatchServiceStub = DetailMatchServiceStub()
         let expectedError = APIError.invalidResponse

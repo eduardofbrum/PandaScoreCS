@@ -37,7 +37,7 @@ struct DetailMatchView: View {
                     Spacer()
                 }
             case .error:
-                EmptyView()
+                Text("Erro inesperado")
             }
         }
         .task {
