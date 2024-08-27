@@ -1,9 +1,10 @@
 import Combine
 import Foundation
 
-enum DetailState {
+enum DetailState: Equatable {
     case loading
     case loaded([Player], [Player])
+    case error
 }
 
 class DetailMatchViewModel: ObservableObject {
@@ -28,7 +29,13 @@ class DetailMatchViewModel: ObservableObject {
         Publishers.Zip(team1Publisher, team2Publisher)
             .receive(on: RunLoop.main)
             .sink(
-                receiveCompletion: { response in
+                receiveCompletion: { completion in
+                    switch completion {
+                    case .failure(let error):
+                        self.detailState = .error
+                    case .finished:
+                        break
+                    }
                 },
                 receiveValue: { [weak self] (team1, team2) in
                     self?.detailState = .loaded(team1, team2)

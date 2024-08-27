@@ -36,6 +36,8 @@ struct ListMatchesView: View {
                     }
                     .padding()
                 }
+            case .error:
+                Text("Erro inesperado")
             }
         }
         .navigationTitle("Partidas")
