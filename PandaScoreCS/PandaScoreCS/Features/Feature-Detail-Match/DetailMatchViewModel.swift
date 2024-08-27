@@ -11,9 +11,11 @@ class DetailMatchViewModel: ObservableObject {
     let service: DetailMatchServiceProtocol
     
     @Published var detailState: DetailState = .loading
+    @Published var matchDate: String
     
-    init(service: DetailMatchServiceProtocol) {
+    init(service: DetailMatchServiceProtocol, matchDate: String) {
         self.service = service
+        self.matchDate = formatMatchDate(dateString: matchDate, fromFormat: "yyyy-MM-dd'T'HH:mm:ssZ")
     }
     
     func fetchMatch(_ match: Match) {

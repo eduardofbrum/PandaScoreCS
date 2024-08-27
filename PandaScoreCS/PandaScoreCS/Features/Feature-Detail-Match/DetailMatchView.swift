@@ -26,7 +26,7 @@ struct DetailMatchView: View {
                     )
                     .padding(.vertical, Tokens.paddings.xxl)
                     
-                    Text("Hoje, 21:00")
+                    Text(viewModel.matchDate)
                         .font(Tokens.fonts.mediumBold)
                     
                     PlayersContainer(

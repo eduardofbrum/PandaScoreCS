@@ -39,6 +39,7 @@
 		0BD47E1C2C7D374800E1C51D /* DetailMatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47E1B2C7D374800E1C51D /* DetailMatchViewModel.swift */; };
 		0BD47E1E2C7D3D3700E1C51D /* DetailMatchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47E1D2C7D3D3700E1C51D /* DetailMatchService.swift */; };
 		0BD47E202C7D418800E1C51D /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47E1F2C7D418800E1C51D /* Player.swift */; };
+		0BD47E272C7DFAFC00E1C51D /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47E262C7DFAFC00E1C51D /* DateFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,7 @@
 		0BD47E1B2C7D374800E1C51D /* DetailMatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMatchViewModel.swift; sourceTree = "<group>"; };
 		0BD47E1D2C7D3D3700E1C51D /* DetailMatchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMatchService.swift; sourceTree = "<group>"; };
 		0BD47E1F2C7D418800E1C51D /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		0BD47E262C7DFAFC00E1C51D /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 		0BD47DCD2C76287900E1C51D /* PandaScoreCS */ = {
 			isa = PBXGroup;
 			children = (
+				0BD47E252C7DFAEC00E1C51D /* Utils */,
 				0BD47E212C7DF92200E1C51D /* Features */,
 				0BD47DFA2C78062F00E1C51D /* DesignSystem */,
 				0BD47DF12C77664C00E1C51D /* Model */,
@@ -231,6 +234,14 @@
 			path = "Feature-Splash-Screen";
 			sourceTree = "<group>";
 		};
+		0BD47E252C7DFAEC00E1C51D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0BD47E262C7DFAFC00E1C51D /* DateFormatter.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -322,6 +333,7 @@
 				0BD47DF92C77E85700E1C51D /* MatchViewModel.swift in Sources */,
 				0BD47DE52C762E3100E1C51D /* ListMatchesView.swift in Sources */,
 				0BD47DCF2C76287A00E1C51D /* PandaScoreCSApp.swift in Sources */,
+				0BD47E272C7DFAFC00E1C51D /* DateFormatter.swift in Sources */,
 				0BD47DE02C762AEA00E1C51D /* Page.swift in Sources */,
 				0BD47E062C78B73600E1C51D /* ImageLogo.swift in Sources */,
 				0BD47DE72C762E4A00E1C51D /* DetailMatchView.swift in Sources */,

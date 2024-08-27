@@ -27,7 +27,8 @@ struct ListMatchesView: View {
                                 coordinator.push(.detailMatch(
                                     match: match,
                                     viewModel: .init(
-                                        service: DetailMatchService()
+                                        service: DetailMatchService(),
+                                        matchDate: match.scheduledAt ?? ""
                                     )
                                 ))
                             }
