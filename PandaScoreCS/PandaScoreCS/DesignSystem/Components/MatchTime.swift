@@ -8,7 +8,7 @@ struct MatchTime: View {
         HStack(spacing: .zero) {
             Spacer()
             Text(date)
-                .font(Tokens.fonts.bold8)
+                .font(Tokens.fonts.paragraph1Bold)
                 .foregroundStyle(Tokens.colors.primaryText)
                 .padding(Tokens.paddings.m)
                 .background(status == .running ? Tokens.colors.alert : Tokens.colors.neutral3)

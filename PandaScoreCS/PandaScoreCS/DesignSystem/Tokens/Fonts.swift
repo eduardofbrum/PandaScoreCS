@@ -2,15 +2,12 @@ import SwiftUI
 
 struct Fonts {
     // Regular
-    let regular8 = Font.system(size: 8)
-    let regular10 = Font.system(size: 10)
-    let medium = Font.system(size: 12)
-    
-    // Semibold
-    let semibold8 = Font.system(size: 8, weight: .semibold)
+    let paragraph1 = Font.system(size: 8)
+    let paragraph2 = Font.system(size: 10)
+    let paragraph3 = Font.system(size: 12)
     
     // Bold
-    let bold8 = Font.system(size: 8, weight: .bold)
-    let mediumBold = Font.system(size: 12, weight: .bold)
-    let medium2Bold = Font.system(size: 14, weight: .bold)
+    let paragraph1Bold = Font.system(size: 8, weight: .bold)
+    let paragraph2Bold = Font.system(size: 12, weight: .bold)
+    let paragraph4Bold = Font.system(size: 14, weight: .bold) //mediu2
 }
