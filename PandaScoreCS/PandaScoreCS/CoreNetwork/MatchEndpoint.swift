@@ -1,7 +1,7 @@
 import Foundation
 
 enum MatchEndpoint: APIEndpoint {
-    case getMatches
+    case getMatches(page: String)
     case getPlayers(teamId: Int)
     
     var baseURL: URL {
@@ -30,9 +30,11 @@ enum MatchEndpoint: APIEndpoint {
     
     var parameters: [String : String]? {
         switch self {
-        case .getMatches:
+        case .getMatches(let page):
             return [
-                "filter[opponents_filled]": "true"
+                "filter[opponents_filled]": "true",
+                "page[size]": "10",
+                "page[number]": page
             ]
         case .getPlayers(let teamId):
             return ["filter[team_id]": "\(teamId)"]

@@ -3,7 +3,7 @@ import Foundation
 
 enum ListState: Equatable {    
     case loading
-    case loaded([Match])
+    case loaded
     case error
 }
 
@@ -12,13 +12,24 @@ public class ListMatchViewModel: ObservableObject {
     let service: ListMatchServiceProtocol
     
     @Published var listState: ListState = .loading
+    @Published var matches: [Match] = []
+    @Published var isLoadingNextPage: Bool = false
+    var page: Int = 1
+    var limitPage: Int = 10
     
     init(service: ListMatchServiceProtocol) {
         self.service = service
     }
     
-    func fetchMatches() {
-        service.getMatches()
+    func fetchMatches(isRefresh: Bool = false) {
+        if isRefresh {
+            page = 1
+            limitPage = 10
+        }
+        
+        guard page == 1 else { return }
+        
+        service.getMatches(page: "\(page)")
             .receive(on: RunLoop.main)
             .sink(receiveCompletion: { completion in
                 switch completion {
@@ -30,7 +41,33 @@ public class ListMatchViewModel: ObservableObject {
             }, receiveValue: {[weak self] data in
                 let matches = self?.sortMatches(data)
                 guard let matches = matches else { return }
-                self?.listState = .loaded(matches)
+                self?.listState = .loaded
+                self?.matches = matches
+            }).store(in: &cancellables)
+    }
+    
+    func fetchNextPage(_ offset: Int) {
+        guard isLoadingNextPage == false else { return }
+        guard offset == (limitPage - 1) else { return }
+        
+        isLoadingNextPage = true
+        page += 1
+        limitPage += 10
+        
+        service.getMatches(page: "\(page)")
+            .receive(on: RunLoop.main)
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .failure:
+                    self.listState = .error
+                case .finished:
+                    break
+                }
+            }, receiveValue: {[weak self] data in
+                let matches = self?.sortMatches(data)
+                guard let matches = matches else { return }
+                self?.matches.append(contentsOf: matches)
+                self?.isLoadingNextPage = false
             }).store(in: &cancellables)
     }
     
