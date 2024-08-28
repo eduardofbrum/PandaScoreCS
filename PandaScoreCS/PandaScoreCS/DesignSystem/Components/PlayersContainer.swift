@@ -31,5 +31,8 @@ struct PlayersContainer: View {
 }
 
 #Preview {
-    PlayersContainer(playersTeam1: [], playersTeam2: [])
+    let player = Player(id: 1, nickname: "FalleN", firstName: "Gabriel", lastName: "Toledo", imageUrl: "")
+    
+    
+    return PlayersContainer(playersTeam1: [player, player, player, player, player], playersTeam2: [player, player, player, player, player])
 }
