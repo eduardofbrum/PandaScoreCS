@@ -14,7 +14,7 @@ struct LeagueContainer: View {
                     )
                     .padding(.trailing, Tokens.paddings.m)
                 Text(name)
-                    .font(Tokens.fonts.regular8)
+                    .font(Tokens.fonts.paragraph1)
             }
             
             Spacer()

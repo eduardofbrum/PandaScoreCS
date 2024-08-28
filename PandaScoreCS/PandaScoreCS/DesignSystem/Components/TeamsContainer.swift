@@ -14,11 +14,11 @@ struct TeamsContainer: View {
                     )
                     .padding(.bottom, Tokens.paddings.l)
                 Text(team1?.name ?? "TBD")
-                    .font(Tokens.fonts.regular10)
+                    .font(Tokens.fonts.paragraph2)
             }
             
             Text("VS")
-                .font(Tokens.fonts.medium)
+                .font(Tokens.fonts.paragraph3)
                 .foregroundStyle(Tokens.colors.neutral1)
                 .padding(.horizontal, Tokens.paddings.xxl)
             
@@ -30,7 +30,7 @@ struct TeamsContainer: View {
                     )
                     .padding(.bottom, Tokens.paddings.l)
                 Text(team2?.name ?? "TBD")
-                    .font(Tokens.fonts.regular10)
+                    .font(Tokens.fonts.paragraph2)
             }
         }
     }
