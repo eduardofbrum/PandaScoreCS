@@ -11,10 +11,10 @@ struct ListMatchesView: View {
             case .loading:
                 ProgressView()
                     .controlSize(.large)
-            case .loaded(let matches):
+            case .loaded:
                 ScrollView {
-                    VStack(spacing: .zero) {
-                        ForEach(matches) { match in
+                    LazyVStack(spacing: .zero) {
+                        ForEach(Array(viewModel.matches.enumerated()), id: \.0) { offset, match in
                             MatchCard(
                                 status: match.status,
                                 date: viewModel.getMatchDate(status: match.status, date: match.scheduledAt ?? ""),
@@ -32,6 +32,10 @@ struct ListMatchesView: View {
                                     )
                                 ))
                             }
+                            .onAppear { viewModel.fetchNextPage(offset) }
+                        }
+                        if viewModel.isLoadingNextPage {
+                            ProgressView()
                         }
                     }
                     .padding()
@@ -45,7 +49,7 @@ struct ListMatchesView: View {
             viewModel.fetchMatches()
         }
         .refreshable {
-            viewModel.fetchMatches()
+            viewModel.fetchMatches(isRefresh: true)
         }
     }
 }
