@@ -22,10 +22,10 @@ struct PlayerCard: View {
                     Spacer()
                     VStack(alignment: .trailing) {
                         Text(player.nickname)
-                            .font(Tokens.fonts.medium2Bold)
+                            .font(Tokens.fonts.paragraph4Bold)
                             .lineLimit(1)
                         Text("\(player.firstName ?? "")")
-                            .font(Tokens.fonts.medium)
+                            .font(Tokens.fonts.paragraph3)
                             .foregroundStyle(Tokens.colors.neutral4)
                     }
                     .padding(.trailing, Tokens.paddings.xl)
@@ -41,10 +41,10 @@ struct PlayerCard: View {
                     
                     VStack(alignment: .leading) {
                         Text(player.nickname)
-                            .font(Tokens.fonts.medium2Bold)
+                            .font(Tokens.fonts.paragraph4Bold)
                             .lineLimit(1)
                         Text("\(player.firstName ?? "")")
-                            .font(Tokens.fonts.medium)
+                            .font(Tokens.fonts.paragraph3)
                             .foregroundStyle(Tokens.colors.neutral4)
                     }
                     .padding(.leading, Tokens.paddings.xl)

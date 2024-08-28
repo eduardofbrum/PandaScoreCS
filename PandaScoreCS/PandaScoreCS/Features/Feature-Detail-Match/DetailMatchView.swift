@@ -27,7 +27,7 @@ struct DetailMatchView: View {
                     .padding(.vertical, Tokens.paddings.xxl)
                     
                     Text(viewModel.matchDate)
-                        .font(Tokens.fonts.mediumBold)
+                        .font(Tokens.fonts.paragraph2Bold)
                     
                     PlayersContainer(
                         playersTeam1: playersTeam1,
