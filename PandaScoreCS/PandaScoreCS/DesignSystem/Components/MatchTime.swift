@@ -22,5 +22,5 @@ struct MatchTime: View {
 }
 
 #Preview {
-    MatchTime(date: "")
+    MatchTime(date: "Hoje, 20:30")
 }

@@ -2,7 +2,7 @@ import SwiftUI
 
 struct ListMatchesView: View {
     @EnvironmentObject var coordinator: Coordinator
-    @StateObject var viewModel: ListMatchViewModel = ListMatchViewModel(service: ListMatchService())
+    @StateObject var viewModel: ListMatchViewModel
     
     var body: some View {
         ZStack {
@@ -55,5 +55,10 @@ struct ListMatchesView: View {
 }
 
 #Preview {
-    ListMatchesView()
+    var stubService = ListMatchServiceStub()
+    stubService.getMatchesResultToBeReturned = .success([.fixture(), .fixture(), .fixture()])
+    
+    @StateObject var viewModel: ListMatchViewModel = ListMatchViewModel(service: stubService)
+    
+    return ListMatchesView(viewModel: viewModel)
 }
